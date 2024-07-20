@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="work_order_print" model="ir.actions.report">
+			<field name="name">Form Report Work Order</field>
+			<field name="model">work.order</field>
+			<field name="report_name">report_work_order_py3o</field>
+			<field name="report_type">py3o</field>
+			<field name="py3o_filetype">pdf</field>
+			<field name="module">booking_order_AgusRianS_17072024</field>
+			<field name="py3o_template_fallback">report/report_work_order.odt</field>
+			<field name="print_report_name">('Work Order - %s' % (object.name)) or 'Work Order - %s' % (object.name)</field>
+			<field name="binding_model_id" eval="False"/>
+			<field name="binding_type">report</field>
+		</record>
+    </data>
+</odoo>

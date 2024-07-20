@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//form/sheet/notebook/page[@name='order_lines']" position="before">
+                <page name="additional_field" string="Additional Fields">
+                    <group string="Booking Information">
+                        <field name="is_booking_order"/>
+                        <field name="team_id_service_team"/>
+                        <field name="team_leader_id"/>
+                        <field name="team_members_ids"/>
+                        <field name="booking_start"/>
+                        <field name="booking_end"/>
+                    </group>
+                </page>
+            </xpath>
+
+            <xpath expr="//form/header/field[@name='state']" position="before">
+                <button name="action_check_availability" type="object" string="Check Availability " class="oe_highlight"/>
+            </xpath>
+
+
+        </field>
+    </record>
+
+</odoo>

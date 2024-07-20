@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_sale_order,access_sale_order,model_sale_order,base.group_user,1,1,1,1
+
+access_service_team_manager,access.service.team.manager,model_service_team,base.group_user,1,1,1,1
+
+access_work_order_manager,access.work.order.manager,model_work_order,base.group_user,1,1,1,1
+
+access_work_order_cancel_reason,access.work.order.cancel.reason,model_work_order_cancel_reason,base.group_user,1,1,1,1

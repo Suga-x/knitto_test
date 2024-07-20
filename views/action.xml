@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="service_team_action" model="ir.actions.act_window">
+        <field name="name">Service Team</field>
+        <field name="res_model">service.team</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <h1>000</h1>
+        </field>
+    </record>
+
+    <record id="action_booking_order" model="ir.actions.act_window">
+        <field name="name">Booking Orders</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_booking_order', '=', True)]</field>
+        <field name="context">{'default_is_booking_order': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the first booking order
+            </p>
+        </field>
+    </record>
+
+    <record id="action_work_order" model="ir.actions.act_window">
+        <field name="name">Work Orders</field>
+        <field name="res_model">work.order</field>
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the first work order
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="booking_menu"
+        name="Booking"
+        parent="sale.sale_menu_root"
+        sequence="10"/>
+
+    <menuitem
+        id="service_team_action_menu"
+        name="Service Team"
+        action="service_team_action"
+        parent="booking_menu"
+        sequence="1"/>
+
+    <menuitem
+        id="action_booking_order_menu"
+        name="Booking Order"
+        action="action_booking_order"
+        parent="booking_menu"
+        sequence="2"/>
+    <menuitem
+        id="action_work_order_menu"
+        name="Work Order"
+        action="action_work_order"
+        parent="booking_menu"
+        sequence="3"/>
+
+
+</odoo>
